@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds0ktbk5bnvka"]
+
+[ext_resource type="PackedScene" uid="uid://cuvdtkq18bau0" path="res://assets/models/pillboxlow.fbx" id="1_baxxp"]
+
+[node name="Root Scene" instance=ExtResource("1_baxxp")]

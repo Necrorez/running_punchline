@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=12 format=3 uid="uid://ceu8wkrtq7jme"]
+
+[ext_resource type="Script" path="res://scripts/resources/DialogueResource.gd" id="1_auhf4"]
+[ext_resource type="Script" path="res://scripts/resources/DialogueAnswerOption.gd" id="1_fwyg5"]
+[ext_resource type="Script" path="res://scripts/resources/DialogueItem.gd" id="2_8mqqj"]
+
+[sub_resource type="Resource" id="Resource_pi2fg"]
+script = ExtResource("1_fwyg5")
+displayed_text = "Pizza! My savior!"
+option_weigth = 0
+next_node_name = "Second"
+
+[sub_resource type="Resource" id="Resource_scbjb"]
+script = ExtResource("1_fwyg5")
+displayed_text = "What delight?"
+option_weigth = 0
+next_node_name = "Second"
+
+[sub_resource type="Resource" id="Resource_fpbde"]
+script = ExtResource("2_8mqqj")
+node_name = "First"
+dialogue = "Delivery for apartment 3B! Hope you're ready to dive into a cheesy delight!"
+dialogue_options = Array[ExtResource("1_fwyg5")]([SubResource("Resource_pi2fg"), SubResource("Resource_scbjb")])
+
+[sub_resource type="Resource" id="Resource_2scwf"]
+script = ExtResource("1_fwyg5")
+displayed_text = "You sound sus."
+option_weigth = 0
+next_node_name = "Good"
+
+[sub_resource type="Resource" id="Resource_a3ae2"]
+script = ExtResource("1_fwyg5")
+displayed_text = "Don't throw red shells at me!"
+option_weigth = 0
+next_node_name = "Bad"
+
+[sub_resource type="Resource" id="Resource_anidy"]
+script = ExtResource("2_8mqqj")
+node_name = "Second"
+dialogue = "Don't worry, I come bearing the gift of gastronomic salvation! Though, I must admit, dodging traffic felt like I was in a Mario Kart race. Mushroom power, engage!"
+dialogue_options = Array[ExtResource("1_fwyg5")]([SubResource("Resource_2scwf"), SubResource("Resource_a3ae2")])
+
+[sub_resource type="Resource" id="Resource_ftbwy"]
+script = ExtResource("2_8mqqj")
+node_name = "Good"
+dialogue = "Oh shoot.... Gotta run. `Run`"
+dialogue_options = Array[ExtResource("1_fwyg5")]([])
+
+[sub_resource type="Resource" id="Resource_abpnd"]
+script = ExtResource("2_8mqqj")
+node_name = "Bad"
+dialogue = "No promises! But if I do, at least it'll be followed by a cheesy punchline. Enjoy your pizza adventure!  `Wrong` `Disable`"
+dialogue_options = Array[ExtResource("1_fwyg5")]([])
+
+[resource]
+script = ExtResource("1_auhf4")
+dialogue_resource_name = "PizzaMan"
+dialogues = Array[ExtResource("2_8mqqj")]([SubResource("Resource_fpbde"), SubResource("Resource_anidy"), SubResource("Resource_ftbwy"), SubResource("Resource_abpnd")])
+can_be_scared = true

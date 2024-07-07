@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=9 format=3 uid="uid://cldfjjg7q2ruq"]
+
+[ext_resource type="Script" path="res://scripts/resources/DialogueResource.gd" id="1_dxkvx"]
+[ext_resource type="Script" path="res://scripts/resources/DialogueAnswerOption.gd" id="1_elqa3"]
+[ext_resource type="Script" path="res://scripts/resources/DialogueItem.gd" id="2_p31xj"]
+
+[sub_resource type="Resource" id="Resource_6qd5g"]
+script = ExtResource("1_elqa3")
+displayed_text = "Got ligma?"
+option_weigth = 0
+next_node_name = "Bad"
+
+[sub_resource type="Resource" id="Resource_6phnc"]
+script = ExtResource("1_elqa3")
+displayed_text = "Got a burning question."
+option_weigth = 0
+next_node_name = "Good"
+
+[sub_resource type="Resource" id="Resource_3a0sk"]
+script = ExtResource("2_p31xj")
+node_name = "First"
+dialogue = "Blessings, my child. How may I assist you today? Whether it's guidance or just a listening ear, know that I'm here for you."
+dialogue_options = Array[ExtResource("1_elqa3")]([SubResource("Resource_6qd5g"), SubResource("Resource_6phnc")])
+
+[sub_resource type="Resource" id="Resource_24hsn"]
+script = ExtResource("2_p31xj")
+node_name = "Bad"
+dialogue = "What, no. What kind of question is this. `Wrong` `Disable`"
+dialogue_options = Array[ExtResource("1_elqa3")]([])
+
+[sub_resource type="Resource" id="Resource_mrij5"]
+script = ExtResource("2_p31xj")
+node_name = "Good"
+dialogue = "Absolutely, my child. Fire away! Just don't expect divine intervention if you're asking for lottery numbers. Ohh... Gosh darn it you got me. `Run`
+"
+dialogue_options = Array[ExtResource("1_elqa3")]([])
+
+[resource]
+script = ExtResource("1_dxkvx")
+dialogue_resource_name = "Priest"
+dialogues = Array[ExtResource("2_p31xj")]([SubResource("Resource_3a0sk"), SubResource("Resource_24hsn"), SubResource("Resource_mrij5")])
+can_be_scared = true

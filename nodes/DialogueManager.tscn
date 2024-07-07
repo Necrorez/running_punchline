@@ -1,0 +1,104 @@
+[gd_scene load_steps=13 format=3 uid="uid://bje4w6jcca0qv"]
+
+[ext_resource type="Script" path="res://scripts/DialogueManager.gd" id="1_t5n1s"]
+[ext_resource type="Script" path="res://scripts/resources/PositionHolder.gd" id="2_8xpwe"]
+[ext_resource type="Texture2D" uid="uid://bxkogxa7xwu72" path="res://assets/ui/dialogue_manager/text_box.png" id="2_ovavv"]
+[ext_resource type="Resource" uid="uid://ds2nka625y3qj" path="res://resources/dialogues/level_one_p1.tres" id="3_4jjrh"]
+[ext_resource type="Texture2D" uid="uid://8jxixru6850y" path="res://assets/ui/dialogue_manager/name_box.png" id="3_cg38v"]
+[ext_resource type="Resource" uid="uid://dmyron5m5freo" path="res://resources/dialogues/level_one_p2.tres" id="4_84nui"]
+[ext_resource type="Resource" uid="uid://bgii8ka4w4jtb" path="res://resources/dialogues/postman.tres" id="5_tu2xn"]
+[ext_resource type="Resource" uid="uid://clg3ielvk2pxu" path="res://resources/dialogues/nurse.tres" id="6_himnj"]
+[ext_resource type="Resource" uid="uid://ceu8wkrtq7jme" path="res://resources/dialogues/pizza_man.tres" id="7_0u5ie"]
+[ext_resource type="Resource" uid="uid://cldfjjg7q2ruq" path="res://resources/dialogues/priest.tres" id="8_n0frr"]
+
+[sub_resource type="Resource" id="Resource_5n0p7"]
+script = ExtResource("2_8xpwe")
+node_size = Vector2(1773, 331)
+node_position = Vector2(73, 746)
+
+[sub_resource type="Resource" id="Resource_v842b"]
+script = ExtResource("2_8xpwe")
+node_size = Vector2(1773, 549)
+node_position = Vector2(73, 528)
+
+[node name="DialogueManager" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -1080.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t5n1s")
+default_position = SubResource("Resource_5n0p7")
+w_options_position = SubResource("Resource_v842b")
+dialogues = Array[Resource("res://scripts/resources/DialogueResource.gd")]([ExtResource("3_4jjrh"), ExtResource("4_84nui"), ExtResource("5_tu2xn"), ExtResource("6_himnj"), ExtResource("7_0u5ie"), ExtResource("8_n0frr")])
+
+[node name="DialogHolder" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -887.0
+offset_top = -552.0
+offset_right = 886.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ovavv")
+expand_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="DialogHolder"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = -66.0
+offset_right = 657.0
+offset_bottom = 75.0
+texture = ExtResource("3_cg38v")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NpcName" type="Label" parent="DialogHolder/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 42
+text = "Peter the great"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 1
+
+[node name="DialogueLabel" type="RichTextLabel" parent="DialogHolder"]
+layout_mode = 1
+offset_left = 57.0
+offset_top = 69.0
+offset_right = 1728.0
+offset_bottom = 314.0
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
+text = "Hello this is a test text asdasdasd  asdasd asd"
+scroll_active = false
+
+[node name="OptionMeniu" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.498
+anchor_top = 1.0
+anchor_right = 0.498
+anchor_bottom = 1.0
+offset_left = -837.16
+offset_top = -237.0
+offset_right = 835.84
+offset_bottom = -96.0
+theme_override_constants/separation = 110
+alignment = 1

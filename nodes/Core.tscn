@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://qw7g2f2j7nbp"]
+
+[ext_resource type="Script" path="res://scripts/Core.gd" id="1_adovu"]
+[ext_resource type="Script" path="res://scripts/resources/GameSceneResource.gd" id="2_xvrfs"]
+[ext_resource type="PackedScene" uid="uid://dwymhl0qg1its" path="res://nodes/LoaderScene.tscn" id="3_jjdqq"]
+[ext_resource type="Script" path="res://scripts/AudioManager.gd" id="4_47ftk"]
+
+[sub_resource type="Resource" id="Resource_vn4rs"]
+script = ExtResource("2_xvrfs")
+scene_type = 1
+scene_path = "res://nodes/MainMeniu.tscn"
+
+[sub_resource type="Resource" id="Resource_1mdov"]
+script = ExtResource("2_xvrfs")
+scene_type = 0
+scene_path = "res://nodes/levels/LevelsOne.tscn"
+
+[sub_resource type="Resource" id="Resource_d5spt"]
+script = ExtResource("2_xvrfs")
+scene_type = 0
+scene_path = "res://nodes/levels/LevelsTwo.tscn"
+
+[sub_resource type="Resource" id="Resource_77h7r"]
+script = ExtResource("2_xvrfs")
+scene_type = 0
+scene_path = "res://nodes/levels/LevelsThree.tscn"
+
+[node name="Core" type="Node"]
+script = ExtResource("1_adovu")
+all_game_scenes = Array[ExtResource("2_xvrfs")]([SubResource("Resource_vn4rs"), SubResource("Resource_1mdov"), SubResource("Resource_d5spt"), SubResource("Resource_77h7r")])
+background_scene_loader = ExtResource("3_jjdqq")
+
+[node name="AudioManager" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("4_47ftk")

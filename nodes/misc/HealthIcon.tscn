@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://citayh2cmumuc"]
+
+[ext_resource type="Texture2D" uid="uid://sq8phf4ha0db" path="res://assets/ui/hearth.png" id="1_c3hqq"]
+
+[node name="TextureRect" type="TextureRect"]
+texture_filter = 3
+custom_minimum_size = Vector2(128, 128)
+texture = ExtResource("1_c3hqq")
+expand_mode = 1
+stretch_mode = 5

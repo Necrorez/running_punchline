@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cb3ai7l1ar4yw"]
+
+[ext_resource type="Texture2D" uid="uid://dnlqs3dytc1ko" path="res://assets/models/materials/Cartoon Pizza_v1_001_Diffuse.png" id="1_gi5vq"]
+[ext_resource type="Texture2D" uid="uid://ox6jb2opq6yu" path="res://assets/models/materials/Cartoon Pizza_v1_001_Glossiness.png" id="2_h1um3"]
+
+[resource]
+resource_name = "CartoonPzza_v1_001"
+albedo_color = Color(0.735357, 0.735357, 0.735357, 1)
+albedo_texture = ExtResource("1_gi5vq")
+metallic = 0.12
+metallic_texture = ExtResource("2_h1um3")
+roughness = 0.8

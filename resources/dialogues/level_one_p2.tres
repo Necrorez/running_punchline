@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=4 format=3 uid="uid://dmyron5m5freo"]
+
+[ext_resource type="Script" path="res://scripts/resources/DialogueItem.gd" id="1_dibd7"]
+[ext_resource type="Script" path="res://scripts/resources/DialogueResource.gd" id="1_ymuth"]
+
+[sub_resource type="Resource" id="Resource_vyb63"]
+script = ExtResource("1_dibd7")
+node_name = "First"
+dialogue = "I'mma Run Away `Run`"
+dialogue_options = Array[Resource("res://scripts/resources/DialogueAnswerOption.gd")]([])
+
+[resource]
+script = ExtResource("1_ymuth")
+dialogue_resource_name = "LevelOneBad"
+dialogues = Array[ExtResource("1_dibd7")]([SubResource("Resource_vyb63")])
+can_be_scared = true

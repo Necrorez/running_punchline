@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=10 format=3 uid="uid://clg3ielvk2pxu"]
+
+[ext_resource type="Script" path="res://scripts/resources/DialogueItem.gd" id="1_mtywr"]
+[ext_resource type="Script" path="res://scripts/resources/DialogueResource.gd" id="1_nm17r"]
+[ext_resource type="Script" path="res://scripts/resources/DialogueAnswerOption.gd" id="2_8gc23"]
+
+[sub_resource type="Resource" id="Resource_fogjk"]
+script = ExtResource("1_mtywr")
+node_name = "First"
+dialogue = "Feeling under the weather today? I'm here to make sure everyone's in tip-top shape. `ChangeDialog_Second`"
+dialogue_options = Array[ExtResource("2_8gc23")]([])
+
+[sub_resource type="Resource" id="Resource_b233y"]
+script = ExtResource("1_mtywr")
+node_name = "Second"
+dialogue = "You know, every patient has a story to tell, and I'm here to listen. But let's focus on getting you back on your feet. `ChangeDialog_Third`"
+dialogue_options = Array[ExtResource("2_8gc23")]([])
+
+[sub_resource type="Resource" id="Resource_ekgan"]
+script = ExtResource("2_8gc23")
+displayed_text = "Just a checkup."
+option_weigth = 0
+next_node_name = "Fourth"
+
+[sub_resource type="Resource" id="Resource_lh1vc"]
+script = ExtResource("2_8gc23")
+displayed_text = "Nah, just a scratch."
+option_weigth = 0
+next_node_name = "Fourth"
+
+[sub_resource type="Resource" id="Resource_56lqt"]
+script = ExtResource("1_mtywr")
+node_name = "Third"
+dialogue = "Any symptoms you need to address?"
+dialogue_options = Array[ExtResource("2_8gc23")]([SubResource("Resource_ekgan"), SubResource("Resource_lh1vc")])
+
+[sub_resource type="Resource" id="Resource_0dcac"]
+script = ExtResource("1_mtywr")
+node_name = "Fourth"
+dialogue = "Alright, let's take a look. Anything else you're concerned about?"
+dialogue_options = Array[ExtResource("2_8gc23")]([])
+
+[resource]
+script = ExtResource("1_nm17r")
+dialogue_resource_name = "Nurse"
+dialogues = Array[ExtResource("1_mtywr")]([SubResource("Resource_fogjk"), SubResource("Resource_b233y"), SubResource("Resource_56lqt"), SubResource("Resource_0dcac")])
+can_be_scared = false

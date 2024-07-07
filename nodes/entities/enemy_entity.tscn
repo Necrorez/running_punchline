@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckxlyxdj07p0w"]
+
+[ext_resource type="Script" path="res://scripts/InteractComponent.gd" id="1_4l0ou"]
+[ext_resource type="Script" path="res://scripts/EnemityEnitity.gd" id="1_wciu2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mc7m"]
+resource_local_to_scene = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2pppp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sv86h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ivm5j"]
+size = Vector3(1.03735, 2.0293, 0.673828)
+
+[node name="Node3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.337, 0)
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_wciu2")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_5mc7m")
+mesh = SubResource("CapsuleMesh_2pppp")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.723269, 0)
+shape = SubResource("BoxShape3D_sv86h")
+
+[node name="InteractComponent" type="Area3D" parent="." node_paths=PackedStringArray("parent_node")]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("1_4l0ou")
+parent_node = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractComponent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00879, 0)
+shape = SubResource("BoxShape3D_ivm5j")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47676, 0.7111, 0)

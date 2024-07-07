@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqt1tjgadat00"]
+
+[ext_resource type="Script" path="res://scripts/ExitPoint.gd" id="1_ve8yq"]
+
+[node name="ExitPoint" type="Marker3D"]
+script = ExtResource("1_ve8yq")

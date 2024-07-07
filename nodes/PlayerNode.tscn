@@ -1,0 +1,474 @@
+[gd_scene load_steps=17 format=3 uid="uid://cxx51f6j8vtbb"]
+
+[ext_resource type="Script" path="res://scripts/PlayerNode.gd" id="1_aq4gb"]
+[ext_resource type="Texture2D" uid="uid://din8ngnofifcj" path="res://assets/ui/dead_screen.png" id="2_5k68a"]
+[ext_resource type="Texture2D" uid="uid://c7h7g6fjl4gsa" path="res://assets/models/BESTDANGWOOD.png" id="2_su5hh"]
+[ext_resource type="ArrayMesh" uid="uid://dtdribi0ln3bq" path="res://assets/models/hand-painted-wood-plank.obj" id="3_qexx8"]
+[ext_resource type="Texture2D" uid="uid://bxkogxa7xwu72" path="res://assets/ui/dialogue_manager/text_box.png" id="3_t13mk"]
+[ext_resource type="Texture2D" uid="uid://bertklkx2a8x1" path="res://assets/ui/win_Screen.png" id="4_k6472"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_4mjrb"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_y7mwo"]
+radius = 0.3
+height = 1.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t54iq"]
+margin = 0.532
+radius = 0.311996
+height = 1.75501
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eettr"]
+albedo_texture = ExtResource("2_su5hh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2snsj"]
+size = Vector3(7.36366, 1, 2.05054)
+
+[sub_resource type="Animation" id="Animation_cafxe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand-painted-wood-plank:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.448479, -1.50713, -1.44878)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hand-painted-wood-plank:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.531338, 1.43178, -0.384993)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hand-painted-wood-plank:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.09, 0.09, 0.09)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hand-painted-wood-plank:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_sqldo"]
+resource_name = "attack_anim"
+length = 0.58
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand-painted-wood-plank:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.448479, -1.50713, -1.44878), Vector3(-0.322965, -1.44309, -1.16039), Vector3(-0.199652, -1.00618, -1.21188), Vector3(-0.613713, -1.13788, -1.0769), Vector3(-0.613713, -0.716472, -1.0769), Vector3(-0.613713, -0.254571, -1.0769), Vector3(-0.613713, -0.254571, -1.0769), Vector3(-0.613713, -0.716472, -1.0769), Vector3(-0.613713, -1.13788, -1.0769), Vector3(-0.199652, -1.00618, -1.21188), Vector3(-0.322965, -1.44309, -1.16039), Vector3(-0.448479, -1.50713, -1.44878)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hand-painted-wood-plank:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.509633, 1.43178, -0.307774), Vector3(0.543185, 1.43178, -0.427139), Vector3(0.540684, 1.39728, -0.496383), Vector3(0.484395, 1.39728, -0.566551), Vector3(0.316362, 1.39728, -0.613783), Vector3(0.150685, 1.39728, -0.660353), Vector3(0.150685, 1.39728, -0.660353), Vector3(0.316362, 1.39728, -0.613783), Vector3(0.484395, 1.39728, -0.566551), Vector3(0.540684, 1.39728, -0.496383), Vector3(0.543185, 1.43178, -0.427139), Vector3(0.509633, 1.43178, -0.307774)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hand-painted-wood-plank:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.09, 0.09, 0.09), Vector3(0.09, 0.09, 0.0900001), Vector3(0.09, 0.0900001, 0.0900001), Vector3(0.0900001, 0.0900001, 0.0900002), Vector3(0.0900001, 0.0900001, 0.0900002), Vector3(0.0900001, 0.0900002, 0.0900002), Vector3(0.0900001, 0.0900002, 0.0900002), Vector3(0.0900001, 0.0900001, 0.0900002), Vector3(0.0900001, 0.0900001, 0.0900002), Vector3(0.09, 0.0900001, 0.0900001), Vector3(0.09, 0.09, 0.0900001), Vector3(0.09, 0.09, 0.09)]
+}
+
+[sub_resource type="Animation" id="Animation_2hyeq"]
+resource_name = "hide_plank"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand-painted-wood-plank:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hand-painted-wood-plank:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.509633, 1.43178, -0.307774), Vector3(0.566661, 1.06268, -0.51066), Vector3(0.509633, 0.988856, -0.307774)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hand-painted-wood-plank:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.448479, -1.50713, -1.44878), Vector3(-0.1259, -2.22291, 0.22907), Vector3(0.112221, -2.3889, 0.985732)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hand-painted-wood-plank:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.09, 0.09, 0.09), Vector3(0.09, 0.09, 0.09), Vector3(0.09, 0.09, 0.09)]
+}
+
+[sub_resource type="Animation" id="Animation_ifeac"]
+resource_name = "take_out_plank"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand-painted-wood-plank:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hand-painted-wood-plank:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.509633, 0.988856, -0.307774), Vector3(0.566661, 1.06268, -0.51066), Vector3(0.509633, 1.43178, -0.307774)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hand-painted-wood-plank:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.112221, -2.3889, 0.985732), Vector3(-0.1259, -2.22291, 0.22907), Vector3(-0.448479, -1.50713, -1.44878)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hand-painted-wood-plank:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.09, 0.09, 0.09), Vector3(0.09, 0.09, 0.09), Vector3(0.09, 0.09, 0.09)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gnhip"]
+_data = {
+"RESET": SubResource("Animation_cafxe"),
+"attack_anim": SubResource("Animation_sqldo"),
+"hide_plank": SubResource("Animation_2hyeq"),
+"take_out_plank": SubResource("Animation_ifeac")
+}
+
+[node name="PlayerNode" type="CharacterBody3D"]
+transform = Transform3D(0.962692, 0, 0.2706, 0, 1, 0, -0.2706, 0, 0.962692, 0, 0, 0)
+script = ExtResource("1_aq4gb")
+player_speed = 500.0
+player_look_speed = 50.0
+gravity = 0.5
+jump_strength = 50.0
+
+[node name="PlayerCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48168, 0)
+attributes = SubResource("CameraAttributesPractical_4mjrb")
+
+[node name="InteractorRaycast" type="RayCast3D" parent="PlayerCamera"]
+target_position = Vector3(0, 0, -3)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+mesh = SubResource("CapsuleMesh_y7mwo")
+
+[node name="GroundRaycast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.287748, 0)
+target_position = Vector3(0, -0.3, 0)
+collide_with_areas = true
+
+[node name="WallCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_t54iq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TempCrosshair" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TempCrosshair2" type="ColorRect" parent="CanvasLayer/TempCrosshair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 1231.0
+offset_top = 24.0
+offset_right = 1359.0
+offset_bottom = 152.0
+
+[node name="DeathScreen" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/DeathScreen"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 670.0
+offset_top = 124.0
+offset_right = 1256.0
+offset_bottom = 710.0
+texture = ExtResource("2_5k68a")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/DeathScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -348.0
+offset_top = 109.0
+offset_right = 392.0
+offset_bottom = 359.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="RestartButton" type="TextureButton" parent="CanvasLayer/DeathScreen/HBoxContainer"]
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 2
+texture_normal = ExtResource("3_t13mk")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/DeathScreen/HBoxContainer/RestartButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/DeathScreen/HBoxContainer"]
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 2
+texture_normal = ExtResource("3_t13mk")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/DeathScreen/HBoxContainer/TextureButton2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Return to Main Meniu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinScreen" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/WinScreen"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 670.0
+offset_top = 124.0
+offset_right = 1256.0
+offset_bottom = 710.0
+texture = ExtResource("4_k6472")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/WinScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -348.0
+offset_top = 109.0
+offset_right = 392.0
+offset_bottom = 359.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="RestartButton" type="TextureButton" parent="CanvasLayer/WinScreen/HBoxContainer"]
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 2
+texture_normal = ExtResource("3_t13mk")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/WinScreen/HBoxContainer/RestartButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Next Level
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton2" type="TextureButton" parent="CanvasLayer/WinScreen/HBoxContainer"]
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 2
+texture_normal = ExtResource("3_t13mk")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/WinScreen/HBoxContainer/ExitButton2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Return to Main Meniu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hand-painted-wood-plank" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.037958, 0.0104236, -0.0809354, -0.0804967, 0.00987096, 0.0390236, 0.0133964, 0.0888477, 0.00515983, 0.531338, 1.43178, -0.384993)
+visible = false
+material_override = SubResource("StandardMaterial3D_eettr")
+mesh = ExtResource("3_qexx8")
+
+[node name="Plank" type="Area3D" parent="Hand-painted-wood-plank"]
+collision_layer = 4
+collision_mask = 4
+collision_priority = 2.0
+input_ray_pickable = false
+priority = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hand-painted-wood-plank/Plank"]
+transform = Transform3D(0.999999, 0, 3.94881e-07, 2.68221e-07, 1, 5.1558e-06, 1.49012e-08, -5.96046e-08, 1, -0.662392, 4.05312e-06, -1.19209e-06)
+shape = SubResource("BoxShape3D_2snsj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gnhip")
+}

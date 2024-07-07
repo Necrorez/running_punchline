@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc3jt4gi7e4cn"]
+
+[ext_resource type="Texture2D" uid="uid://bhqrf62e51bjx" path="res://assets/hdri/autumn_field_4k.exr" id="1_cnuqh"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wdopq"]
+panorama = ExtResource("1_cnuqh")
+
+[sub_resource type="Sky" id="Sky_0fiup"]
+sky_material = SubResource("PanoramaSkyMaterial_wdopq")
+
+[sub_resource type="Environment" id="Environment_birxt"]
+background_mode = 2
+background_energy_multiplier = 0.34
+sky = SubResource("Sky_0fiup")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 3
+ssr_enabled = true
+ssao_enabled = true
+
+[node name="Enviroments" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_birxt")

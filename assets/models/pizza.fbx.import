@@ -1,0 +1,86 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://btmfpbxhyo78b"
+path="res://.godot/imported/pizza.fbx-f097d6835bd2225b606194ea148dfb4d.scn"
+
+[deps]
+
+source_file="res://assets/models/pizza.fbx"
+dest_files=["res://.godot/imported/pizza.fbx-f097d6835bd2225b606194ea148dfb4d.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"CartoonPzza_v1_001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/CartoonPzza_v1_001.tres"
+},
+"lambert1": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/lambert1.tres"
+}
+},
+"nodes": {
+"PATH:AnimationPlayer": {
+"import/skip_import": true
+},
+"PATH:RootNode/Cam_Light_Set_Cam_Light_Set_Cam_Light_Set_Cam_Light_Set_cama": {
+"import/skip_import": true
+},
+"PATH:RootNode/Cam_Light_Set_Cam_Light_Set_Cam_Light_Set_Cam_Light_Set_camb": {
+"import/skip_import": true
+},
+"PATH:RootNode/Cam_Light_Set_Cam_Light_Set_Cam_Light_Set_Cam_Light_Set_camc": {
+"import/skip_import": true
+},
+"PATH:RootNode/Cam_Light_Set_Cam_Light_Set_Cam_Light_Set_Cam_Light_Set_camd": {
+"import/skip_import": true
+},
+"PATH:RootNode/Cam_Light_Set_Cam_Light_Set_Cam_Light_Set_Cam_Light_Set_directionalLight1": {
+"import/skip_import": true
+},
+"PATH:RootNode/Cam_Light_Set_Cam_Light_Set_Cam_Light_Set_Cam_Light_Set_directionalLight2": {
+"import/skip_import": true
+},
+"PATH:RootNode/Cam_Light_Set_Cam_Light_Set_Cam_Light_Set_Cam_Light_Set_directionalLight3": {
+"import/skip_import": true
+},
+"PATH:RootNode/Cam_Light_Set_Cam_Light_Set_Cam_Light_Set_pPlane1": {
+"import/skip_import": true
+},
+"PATH:RootNode/CartoonPizza_v1_001/CartoonPizza_v1_001_Parts_2": {
+"import/skip_import": true
+},
+"PATH:RootNode/CartoonPizza_v1_001/CartoonPizza_v1_001_Parts_3": {
+"import/skip_import": true
+},
+"PATH:RootNode/CartoonPizza_v1_001/CartoonPizza_v1_001_Parts_4": {
+"import/skip_import": true
+},
+"PATH:RootNode/CartoonPizza_v1_001/CartoonPizza_v1_001_Parts_5": {
+"import/skip_import": true
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4srw1s1edfgu"]
+
+[ext_resource type="Script" path="res://scripts/SpeedBoost.gd" id="1_dynpg"]
+[ext_resource type="Texture2D" uid="uid://bv5lcw2inttak" path="res://assets/ui/coin.png" id="2_ei7te"]
+[ext_resource type="PackedScene" uid="uid://bxd24style6b3" path="res://nodes/InteractComponent.tscn" id="3_oqj5e"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_et3h7"]
+radius = 0.0930973
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ox5lo"]
+radius = 0.35341
+
+[node name="SpeedBoost" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.394244, 0)
+script = ExtResource("1_dynpg")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture = ExtResource("2_ei7te")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.274196, 0)
+shape = SubResource("SphereShape3D_et3h7")
+
+[node name="InteractComponent2" parent="." node_paths=PackedStringArray("parent_node") instance=ExtResource("3_oqj5e")]
+parent_node = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractComponent2"]
+shape = SubResource("SphereShape3D_ox5lo")

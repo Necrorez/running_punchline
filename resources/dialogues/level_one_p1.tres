@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=10 format=3 uid="uid://ds2nka625y3qj"]
+
+[ext_resource type="Script" path="res://scripts/resources/DialogueAnswerOption.gd" id="1_7t71s"]
+[ext_resource type="Script" path="res://scripts/resources/DialogueResource.gd" id="1_a7m3t"]
+[ext_resource type="Script" path="res://scripts/resources/DialogueItem.gd" id="2_pxor3"]
+
+[sub_resource type="Resource" id="Resource_4tyri"]
+script = ExtResource("2_pxor3")
+node_name = "First"
+dialogue = "I have been a bad boy, such a badddd baka uwu :3 `ChangeDialog_Fourth`"
+dialogue_options = Array[ExtResource("1_7t71s")]([])
+
+[sub_resource type="Resource" id="Resource_m0dyb"]
+script = ExtResource("2_pxor3")
+node_name = "Second"
+dialogue = "Oh shit you don't like femboys? uwu me is sad `Run` "
+dialogue_options = Array[ExtResource("1_7t71s")]([])
+
+[sub_resource type="Resource" id="Resource_6juwo"]
+script = ExtResource("2_pxor3")
+node_name = "Third"
+dialogue = "OOOOOoooo yeee cum here lil beiby "
+dialogue_options = Array[ExtResource("1_7t71s")]([])
+
+[sub_resource type="Resource" id="Resource_ixmii"]
+script = ExtResource("1_7t71s")
+displayed_text = "Hell Nah"
+option_weigth = 10
+next_node_name = "Second"
+
+[sub_resource type="Resource" id="Resource_iiuug"]
+script = ExtResource("1_7t71s")
+displayed_text = "Hell Yeah"
+option_weigth = -5
+next_node_name = "Third"
+
+[sub_resource type="Resource" id="Resource_4ednv"]
+script = ExtResource("2_pxor3")
+node_name = "Fourth"
+dialogue = "Something is going on in my head and I cant say anything about it"
+dialogue_options = Array[ExtResource("1_7t71s")]([SubResource("Resource_ixmii"), SubResource("Resource_iiuug")])
+
+[resource]
+script = ExtResource("1_a7m3t")
+dialogue_resource_name = "LevelOneGood"
+dialogues = Array[ExtResource("2_pxor3")]([SubResource("Resource_4tyri"), SubResource("Resource_m0dyb"), SubResource("Resource_6juwo"), SubResource("Resource_4ednv")])
+can_be_scared = true

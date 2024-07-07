@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=9 format=3 uid="uid://bgii8ka4w4jtb"]
+
+[ext_resource type="Script" path="res://scripts/resources/DialogueItem.gd" id="1_j5j3q"]
+[ext_resource type="Script" path="res://scripts/resources/DialogueAnswerOption.gd" id="2_q3imi"]
+[ext_resource type="Script" path="res://scripts/resources/DialogueResource.gd" id="3_77yo5"]
+
+[sub_resource type="Resource" id="Resource_jvsg7"]
+script = ExtResource("1_j5j3q")
+node_name = "First"
+dialogue = "Got mail to send or receive? It's a quiet day on the delivery front, but I'm always ready to ensure those letters and packages find their rightful owners. `ChangeDialog_Second`"
+dialogue_options = Array[ExtResource("2_q3imi")]([])
+
+[sub_resource type="Resource" id="Resource_c0dvl"]
+script = ExtResource("2_q3imi")
+displayed_text = "Just passing through."
+option_weigth = 0
+next_node_name = "Third"
+
+[sub_resource type="Resource" id="Resource_pu5jc"]
+script = ExtResource("2_q3imi")
+displayed_text = "Nah, nothing today."
+option_weigth = 0
+next_node_name = "Third"
+
+[sub_resource type="Resource" id="Resource_t5jib"]
+script = ExtResource("1_j5j3q")
+node_name = "Second"
+dialogue = "You know, there's something reassuring about the steady rhythm of delivering mail, like each envelope holds a piece of someone's story waiting to be told. But I digress. Anything needing my attention today?"
+dialogue_options = Array[ExtResource("2_q3imi")]([SubResource("Resource_c0dvl"), SubResource("Resource_pu5jc")])
+
+[sub_resource type="Resource" id="Resource_mv3j4"]
+script = ExtResource("1_j5j3q")
+node_name = "Third"
+dialogue = "Suit yourself. Need anything else?"
+dialogue_options = Array[ExtResource("2_q3imi")]([])
+
+[resource]
+script = ExtResource("3_77yo5")
+dialogue_resource_name = "Postman"
+dialogues = Array[ExtResource("1_j5j3q")]([SubResource("Resource_jvsg7"), SubResource("Resource_t5jib"), SubResource("Resource_mv3j4")])
+can_be_scared = false
